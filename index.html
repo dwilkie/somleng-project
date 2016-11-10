@@ -30,26 +30,6 @@
 <p>The Somleng Project is a collection of open source telephony tools which can be used to build powerful Voice and SMS applications. The goal of the project is to break down the economic and accessibility barriers to building telephony applications.</p>
 
 <h2>
-<a id="what-makes-up-the-somleng-project" class="anchor" href="#what-makes-up-the-somleng-project" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>What makes up The Somleng Project?</h2>
-
-<p>The various open source tools that make up The Somleng Project are listed below. More detailed information about each technology can be found in the individual project repositories.</p>
-
-<ul>
-<li>
-<a href="https://github.com/dwilkie/twilreapi">Twilreapi</a> - An Open Source implementation of <a href="https://www.twilio.com/docs/api/rest">Twilio's REST API</a> built on <a href="http://rubyonrails.org/">Rails</a>.</li>
-<li>
-<a href="https://github.com/dwilkie/somleng">Somleng-Adhearsion</a> - An <a href="https://github.com/adhearsion/adhearsion">Adhearsion</a> application which handles delivering phone calls.</li>
-<li>
-<a href="https://github.com/dwilkie/adhearsion-twilio">Adhearsion-Twilio</a> - An <a href="https://github.com/adhearsion/adhearsion">Adhearsion</a> Plugin which talks <a href="https://www.twilio.com/docs/api/twiml">TwiML</a>.</li>
-<li>
-<a href="https://github.com/adhearsion/adhearsion">Adhearsion</a> - A Ruby framework for building telephony applications.</li>
-<li>
-<a href="https://github.com/dwilkie/freeswitch-config">Somleng FreeSWITCH configuration</a> - FreeSWITCH configuration optimized for Somleng.</li>
-<li>
-<a href="https://freeswitch.org/">FreeSWITCH</a> - Free multi-protocol softswitch.</li>
-</ul>
-
-<h2>
 <a id="how-can-i-use-it" class="anchor" href="#how-can-i-use-it" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How can I use it?</h2>
 
 <p>Here's how to make a phone call through Somleng. Look familiar?</p>
@@ -61,6 +41,46 @@
     -d "From=%2B85512345679" \
     -u 'your_account_sid:your_auth_token'
 </code></pre>
+
+<h2>
+<a id="project-resources" class="anchor" href="#project-resources" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Project Resources</h2>
+
+<p>The various open source tools that make up The Somleng Project are listed below. More detailed information about each technology can be found in the individual project repositories.</p>
+
+<h3>
+<a id="twilreapi" class="anchor" href="#twilreapi" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Twilreapi</h3>
+
+<p><a href="https://github.com/dwilkie/twilreapi">Twilreapi</a> is an Open Source implementation of <a href="https://www.twilio.com/docs/api/rest">Twilio's REST API</a>. You can use <a href="https://github.com/dwilkie/twilreapi">Twilreapi</a> to create accounts, enqueue calls and SMS and view your dashboard.</p>
+
+<h3>
+<a id="somleng-adhearsion" class="anchor" href="#somleng-adhearsion" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Somleng-Adhearsion</h3>
+
+<p><a href="https://github.com/dwilkie/somleng">Somleng-Adhearsion</a> is an <a href="https://github.com/adhearsion/adhearsion">Adhearsion</a> application which can handle the delivery of outbound calls and the processing of inbound calls. You can connect <a href="https://github.com/dwilkie/somleng">Somleng-Adhearsion</a> to <a href="https://github.com/dwilkie/twilreapi">Twilreapi</a> to process your outbound calls and respond to inbound calls.</p>
+
+<h3>
+<a id="adhearsion-twilio" class="anchor" href="#adhearsion-twilio" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Adhearsion-Twilio</h3>
+
+<p><a href="https://github.com/dwilkie/adhearsion-twilio">Adhearsion-Twilio</a> is an <a href="https://github.com/adhearsion/adhearsion">Adhearsion</a> Plugin which talks <a href="https://www.twilio.com/docs/api/twiml">TwiML</a>. <a href="https://github.com/dwilkie/adhearsion-twilio">Adhearsion-Twilio</a> is used in <a href="https://github.com/dwilkie/somleng">Somleng-Adhearsion</a> in order to process <a href="https://www.twilio.com/docs/api/twiml">TwiML</a> returned from the client application.</p>
+
+<h3>
+<a id="somleng-freeswitch-configuration" class="anchor" href="#somleng-freeswitch-configuration" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Somleng FreeSWITCH Configuration</h3>
+
+<p><a href="https://github.com/dwilkie/freeswitch-config">Somleng FreeSWITCH configuration</a> is a set of <a href="https://freeswitch.org/">FreeSWITCH</a> configuration optimized for Adhearsion applications. It can be used with to configure your <a href="https://freeswitch.org/">FreeSWITCH</a> installation to connect to <a href="https://github.com/dwilkie/somleng">Somleng-Adhearsion</a></p>
+
+<h3>
+<a id="somleng-rtd" class="anchor" href="#somleng-rtd" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Somleng-RTD</h3>
+
+<p>Real time data collection tool for The Somleng Project. Coming Soon.</p>
+
+<h3>
+<a id="somleng-demo" class="anchor" href="#somleng-demo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Somleng Demo</h3>
+
+<p>A demo application that shows The Somleng Project in action. Coming Soon.</p>
+
+<h3>
+<a id="the-somleng-project-website" class="anchor" href="#the-somleng-project-website" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>The Somleng Project Website</h3>
+
+<p>The <a href="https://github.com/dwilkie/freeswitch-config">repository</a> for this website.</p>
 
 <h2>
 <a id="whos-sponsoring-the-somleng-project" class="anchor" href="#whos-sponsoring-the-somleng-project" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Who's sponsoring The Somleng Project?</h2>
