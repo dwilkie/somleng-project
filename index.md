@@ -19,7 +19,7 @@ $ curl -XPOST https://your-somleng-installation.com/api/2010-04-01/Accounts/{Acc
     -u 'your_account_sid:your_auth_token'
 ```
 
-You can also connect Somleng to existing applications such as [RapidPro](https://www.rapidpro.io/), or connect it your own application using any of [Twilio's Open Source libraries](https://www.twilio.com/docs/libraries).
+You can also connect Somleng to existing applications such as [RapidPro](https://www.rapidpro.io/) or connect it your own application using any of [Twilio's Open Source libraries](https://www.twilio.com/docs/libraries).
 
 ## Project Resources
 
