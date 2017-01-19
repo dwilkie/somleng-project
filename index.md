@@ -58,6 +58,14 @@ A demo application that shows The Somleng Project in action. Coming Soon.
 
 The [repository](https://github.com/dwilkie/somleng-project) for [this website](http://www.somleng.org).
 
+### TwiML-SM (Open Institute)
+
+[TwiML-SM](https://github.com/somleng/twiml-sm) is a State Machine which simplifies building call flows for PHP applications. This package is being developed by the [Open Institute](http://www.open.org.kh/en)
+
+### RapidPro2TwiMLSM (Open Institute)
+
+[RapidPro2TwimLSM](https://github.com/somleng/rapidpro2twimlsm) is a tool which can export call flows from [RapidPro](https://www.rapidpro.io/) to a TwiML State Machine. This package is being developed by the [Open Institute](http://www.open.org.kh/en).
+
 ## Who's sponsoring The Somleng Project?
 
 [The Somleng Project](http://www.somleng.org) is among the first 5 start-ups to received investment from the the [UNICEF Innovation Fund](http://www.unicefstories.org/2016/11/14/somleng-open-source-telephony).
