@@ -6,6 +6,10 @@
 
 The Somleng Project is a collection of open source telephony tools which can be used to build powerful Voice and SMS applications. The goal of the project is to break down the economic and accessibility barriers to building telephony applications.
 
+## Who's using it?
+
+Check out the [Real Time Data](http://rtd.somleng.org) to see who's currently using Somleng.
+
 ## How can I use it?
 
 Here's how to make a phone call through Somleng. Look familiar?
@@ -48,7 +52,7 @@ The diagram below shows how each technology is connected together. Depending on 
 
 ### Somleng-RTD
 
-[Somleng-RTD](https://github.com/dwilkie/somleng-rtd) is a Real Time Data (RTD) collection API for The Somleng Project. The API provides Real Time Data on various projects that use Somleng. The data includes project information, number of phone calls made, number of SMS messages sent and total cost savings.
+[Somleng-RTD](http://rtd.somleng.org), ([Github](https://github.com/dwilkie/somleng-rtd)) is a Real Time Data (RTD) collection API for The Somleng Project. The API provides Real Time Data on various projects that use Somleng. The data includes project information, number of phone calls made, number of SMS messages sent and total cost savings.
 
 ### Somleng Demo
 
