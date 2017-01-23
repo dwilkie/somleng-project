@@ -48,7 +48,7 @@ The diagram below shows how each technology is connected together. Depending on 
 
 ### Somleng FreeSWITCH Configuration
 
-[Somleng FreeSWITCH configuration](https://github.com/dwilkie/freeswitch-config) is a set of [FreeSWITCH](https://freeswitch.org/) configuration optimized for Adhearsion applications. It can be used with to configure your [FreeSWITCH](https://freeswitch.org/) installation to connect to [Somleng-Adhearsion](https://github.com/dwilkie/somleng)
+[Somleng FreeSWITCH configuration](https://github.com/dwilkie/freeswitch-config) is a set of [FreeSWITCH](https://freeswitch.org/) configuration optimized for Adhearsion applications. It can be used to configure your [FreeSWITCH](https://freeswitch.org/) installation to connect to [Somleng-Adhearsion](https://github.com/dwilkie/somleng).
 
 ### Somleng-RTD
 
@@ -64,7 +64,7 @@ The [repository](https://github.com/dwilkie/somleng-project) for [this website](
 
 ### TwiML-SM (Open Institute)
 
-[TwiML-SM](https://github.com/somleng/twiml-sm) is a State Machine which simplifies building call flows for PHP applications. This package is being developed by the [Open Institute](http://www.open.org.kh/en)
+[TwiML-SM](https://github.com/somleng/twiml-sm) is a State Machine which simplifies building call flows for PHP applications. This package is being developed by the [Open Institute](http://www.open.org.kh/en).
 
 ### RapidPro2TwiMLSM (Open Institute)
 
