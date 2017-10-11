@@ -54,6 +54,10 @@ The diagram below shows how each technology is connected together. Depending on 
 
 [Somleng-RTD](http://rtd.somleng.org), ([Github](https://github.com/dwilkie/somleng-rtd)) is a Real Time Data (RTD) collection API for The Somleng Project. The API provides Real Time Data on various projects that use Somleng. The data includes project information, number of phone calls made, number of SMS messages sent and total cost savings.
 
+### Somleng Simple Call Flow Manager (SCFM)
+
+[Somleng Simple Call Flow Manager (SCFM)](https://github.com/somleng/somleng-scfm) can be used to enqueue, throttle, update, and process calls through Somleng (or Twilio). [Somleng SCFM](https://github.com/somleng/somleng-scfm) can be used as a replacement of [RapidPro](https://community.rapidpro.io/) for enqueuing calls and handling inbound call flows.
+
 ### Somleng Demo
 
 A demo application that shows The Somleng Project in action. Coming Soon.
