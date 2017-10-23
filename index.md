@@ -12,16 +12,7 @@ Check out [Somleng's Real Time Data](http://rtd.somleng.org) to see who's curren
 
 ## How can I use it?
 
-Here's how to make a phone call through Somleng. Look familiar?
-
-```
-$ curl -XPOST https://your-somleng-installation.com/api/2010-04-01/Accounts/{AccountSID}/Calls.json \
-    -d "Method=GET" \
-    -d "Url=http://demo.twilio.com/docs/voice.xml" \
-    -d "To=%2B85512345678" \
-    -d "From=%2B85512345679" \
-    -u 'your_account_sid:your_auth_token'
-```
+Follow the [GETTING STARTED](https://github.com/somleng/somleng-project/blob/master/docs/GETTING_STARTED.md) guide to get started.
 
 You can also connect Somleng to Call Flow Managers such as [RapidPro](https://www.rapidpro.io/) or [Somleng Simple Call Flow Manager (Somleng SCFM)](https://github.com/somleng/somleng-scfm) or connect it your own application using any of [Twilio's Open Source libraries](https://www.twilio.com/docs/libraries).
 

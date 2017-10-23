@@ -20,7 +20,7 @@ From: [http://rtd.somleng.org/](http://rtd.somleng.org/)
 
 1. [Somleng Simple Call Flow Manager (Somleng SCFM)](https://github.com/somleng/somleng-scfm) controls scheduling, queuing, retrying and analysis of outbound calls through [Somleng's REST API](https://github.com/somleng/twilreapi). Somleng SCFM also connects to [RapidPro](https://community.rapidpro.io/) to trigger outbound SMS flows.
 2. [RapidPro](https://community.rapidpro.io/) controls SMS flows and handles inbound phone calls received from Somleng.
-3. [Somleng](https://github.com/somleng/freeswitch-config) is connected to Shaqodoon which acts as an aggrigator for the Mobile Network Operators (MNOs) in Somalia.
+3. [Somleng](https://github.com/somleng/freeswitch-config) is connected to Shaqodoon which acts as an aggregator for the Mobile Network Operators (MNOs) in Somalia.
 4. The MNOs deliver and receive calls through local mobile networks.
 
 ### Hosting
@@ -39,7 +39,7 @@ For this project the domain `unicef.io` was purchased with the intention of reus
 
 ### Shaqadoon
 
-Somleng is connected to [Shaqodoon](http://shaqodoon.org/technology/) which acts as an aggrigator for the multiple Mobile Network Operators (MNOs) in Somalia. Shaqodoon provides a [SIP](https://en.wikipedia.org/wiki/Session_Initiation_Protocol) endpoint to an [Asterisk](http://www.asterisk.org/) server. Shaqodoon provides one [E1 line](https://en.wikipedia.org/wiki/E-carrier) to each MNO. Each E1 line can support up to 32 simultaneous calls. Shaqodoon aggregates the the following MNOs:
+Somleng is connected to [Shaqodoon](http://shaqodoon.org/technology/) which acts as an aggregator for the multiple Mobile Network Operators (MNOs) in Somalia. Shaqodoon provides a [SIP](https://en.wikipedia.org/wiki/Session_Initiation_Protocol) endpoint to an [Asterisk](http://www.asterisk.org/) server. Shaqodoon provides one [E1 line](https://en.wikipedia.org/wiki/E-carrier) to each MNO. Each E1 line can support up to 32 simultaneous calls. Shaqodoon aggregates the the following MNOs:
 
 1. [Telesom](https://en.wikipedia.org/wiki/Telesom)
 2. [Golis](https://en.wikipedia.org/wiki/Golis_Telecom_Somalia)
@@ -51,7 +51,7 @@ Somleng is connected to [Shaqodoon](http://shaqodoon.org/technology/) which acts
 
 #### Call Throttling
 
-Since Shaqodoon (the aggrigator) only provides one [E1 line](https://en.wikipedia.org/wiki/E-carrier) to each MNO (with each line supporting 32 calls) the customer, Africa's Voices Foundation (AVF) quickly ran into issues relating to call throttling when triggering outbound calls through RapidPro.
+Since Shaqodoon (the aggregator) only provides one [E1 line](https://en.wikipedia.org/wiki/E-carrier) to each MNO (with each line supporting 32 calls) the customer, Africa's Voices Foundation (AVF) quickly ran into issues relating to call throttling when triggering outbound calls through RapidPro.
 
 If a call is triggered when an E1 line is full, [Somleng's FreeSWITCH instance](https://github.com/somleng/freeswitch-config) receives a `503` [SIP Response Code](https://en.wikipedia.org/wiki/List_of_SIP_response_codes#5xx.E2.80.94Server_Failure_Responses) from Shaqodoon. According to the [Twilio standard](https://www.twilio.com/docs/api/voice/call#call-status-values) Somleng reports this to the client (in this case RapidPro) as a `failed` call. It's then up to the client (RapidPro) to retry the call through Somleng (or not) according the the logic of the application.
 
@@ -92,17 +92,17 @@ A `recording_finished` event notifies [Somleng's REST API](https://github.com/so
 
 ##### Implementation of the Record Verb in Adhearsion-Twilio
 
-The following describes steps #3-#7 in the [technical flow](#technical-flow).
+The following describes [steps #3-#7 in the technical flow](#technical-flow).
 
 [Adhearsion-Twilio](https://github.com/somleng/adhearsion-twilio) (written by Somleng) is an [Adhearsion Plugin](http://adhearsion.com/docs/plugins) which translates [Twilio Markup Language (TwiML)](https://www.twilio.com/docs/api/twiml) into Adhearsion commands which get executed on [FreeSWITCH](https://github.com/somleng/freeswitch-config).
 
 [Adhearsion-Twilio](https://github.com/somleng/adhearsion-twilio) is used in [Somleng's Adhearsion Application](https://github.com/somleng/somleng) which sits between [Somleng's REST API](https://github.com/somleng/twilreapi) and [FreeSWITCH](https://github.com/somleng/freeswitch-config).
 
-The [<Record/> verb](https://www.twilio.com/docs/api/twiml/record) was [implemented](https://github.com/somleng/adhearsion-twilio/issues/19) in order to initiate recordings on [FreeSWITCH](https://github.com/somleng/freeswitch-config). The [implementation](https://github.com/somleng/adhearsion-twilio/issues/19)
+The [<Record/> verb](https://www.twilio.com/docs/api/twiml/record) was [implemented](https://github.com/somleng/adhearsion-twilio/issues/19) in order to initiate recordings on [FreeSWITCH](https://github.com/somleng/freeswitch-config).
 
 ##### Getting the Recording from Docker to S3
 
-The following describes step #8 in the [technical flow](#technical-flow).
+The following describes [step #8 in the technical flow](#technical-flow).
 
 The raw recording is initially saved to file inside [FreeSWITCH's](https://github.com/somleng/freeswitch-config) docker container. Although the recording directory can be specified in the [FreeSWITCH configuration](https://github.com/somleng/freeswitch-config) it does not allow for uploading the Recording directly to [S3](https://aws.amazon.com/s3/).
 
@@ -110,7 +110,7 @@ The [implementation](https://github.com/somleng/freeswitch-config/issues/12) use
 
 ##### Linking the Recording to the Phone Call
 
-The following describes steps #9-#10 in the [technical flow](#technical-flow).
+The following describes [steps #9-#10 in the technical flow](#technical-flow).
 
 Once the recording has been uploaded to [S3](https://aws.amazon.com/s3/) it needs to be linked to the phone call record in the database so it can be downloaded by the client application through [Somleng's REST API](https://github.com/somleng/twilreapi).
 
@@ -120,13 +120,13 @@ Somleng then finds the originating the Phone Call by matching the [UUID](https:/
 
 ##### Processing the Recording
 
-The following describes step #11 in the [technical flow](#technical-flow).
+The following describes [step #11 in the technical flow](#technical-flow).
 
 After the recording has been linked to the originating phone call, it needs to be processed according to the attributes supplied in the [TwiML attributes](https://www.twilio.com/docs/api/twiml/record#attributes) by the client application. These attributes were received by Somleng's REST API in step #4 of the [technical flow](#technical-flow). The recording is downloaded from [S3](https://aws.amazon.com/s3/), processed then re-uploaded.
 
 ##### Notifying the client that Recording is ready for download
 
-The following describes step #12 in the [technical flow](#technical-flow).
+The following describes [step #12 in the technical flow](#technical-flow).
 
 The final step in the recording flow is to notify the client application that the recording is ready for download. This is specified in the [TwiML specification](https://www.twilio.com/docs/api/twiml/record#attributes-recording-status-callback) and can be enabled by the client application by specifying the `recordingStatusCallback` attribute.
 

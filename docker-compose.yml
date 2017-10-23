@@ -1,0 +1,49 @@
+version: '3'
+services:
+  db:
+    image: postgres
+  twilreapi:
+    image: dwilkie/twilreapi:spec
+    command: bundle exec rails s -p 3000 -b '0.0.0.0'
+    environment:
+      - RAILS_ENV=development
+      - DB_HOST=db
+      - DB_USERNAME=postgres
+      - "TWILREAPI_WORKER_JOB_OUTBOUND_CALL_JOB_DRB_URL=druby://adhearsion:9050"
+      - NO_ADMIN_AUTH=1
+    depends_on:
+      - db
+    # expose the ports below if you want to access API from host
+    # ports:
+      # - "3000:3000"
+  adhearsion:
+    image: dwilkie/somleng:spec
+    environment:
+      - AHN_CORE_HTTP_ENABLE=false
+      - AHN_CORE_HOST=freeswitch
+      - AHN_CORE_PASSWORD=secret
+      - AHN_CORE_USERNAME=adhearsion@localhost
+      - AHN_ADHEARSION_DRB_PORT=9050
+      - AHN_TWILIO_REST_API_ENABLED=1
+      - "AHN_TWILIO_REST_API_PHONE_CALLS_URL=http://twilreapi:3000/api/admin/phone_calls"
+      - "AHN_TWILIO_REST_API_PHONE_CALL_EVENTS_URL=http://twilreapi:3000/api/admin/phone_calls/:phone_call_id/phone_call_events"
+      # if you want to use with a softphone registered on the host, change @linphone to your host IP
+      - "AHN_SOMLENG_DEFAULT_DIAL_STRING_FORMAT=sofia/external/%{destination}@linphone"
+    depends_on:
+      - freeswitch
+  freeswitch:
+    image: dwilkie/freeswitch-rayo
+    # expose the ports below if you want to use with a softphone registered on the host
+    # ports:
+      # - "5060:5060"
+  # can remove linphone if you want to use a softphone registered on the host
+  linphone:
+    image: dwilkie/linphone-docker
+    command: /bin/bash -c 'linphonecsh init && tail -f /dev/null'
+    volumes:
+      - /dev/snd:/dev/snd
+    privileged: true
+  # can remove curl if have curl/jq installed on your host
+  curl:
+    image: endeveit/docker-jq
+    command: /bin/sh -c 'cat /dev/null'
