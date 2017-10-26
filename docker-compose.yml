@@ -27,7 +27,11 @@ services:
       - AHN_TWILIO_REST_API_ENABLED=1
       - "AHN_TWILIO_REST_API_PHONE_CALLS_URL=http://twilreapi:3000/api/admin/phone_calls"
       - "AHN_TWILIO_REST_API_PHONE_CALL_EVENTS_URL=http://twilreapi:3000/api/admin/phone_calls/:phone_call_id/phone_call_events"
-      # if you want to use with a softphone registered on the host, change @linphone to your host IP
+      # if you want to use with a softphone registered on the host, change @linphone to your default route
+      # For Docker for Mac set it to 'docker.for.mac.localhost'.
+      # See https://stackoverflow.com/a/43541732
+      # For linux set it to the result of $ sudo docker-compose run curl /bin/sh -c 'ip route show'
+      # See https://stackoverflow.com/a/31328031
       - "AHN_SOMLENG_DEFAULT_DIAL_STRING_FORMAT=sofia/external/%{destination}@linphone"
     depends_on:
       - freeswitch

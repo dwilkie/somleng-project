@@ -1,6 +1,6 @@
 # Getting Started
 
-This guide is intended to give you instant gratification.
+This guide is intended to get you up and running with Somleng on your machine.
 
 ## Prerequisites
 
@@ -8,11 +8,11 @@ Install [Docker](https://docs.docker.com/engine/installation), [docker-compose](
 
 ## Clone the repository using git
 
-Or download `docker-compose.yml` manually [here](https://raw.githubusercontent.com/somleng/somleng-project/master/docker-compose.yml)
-
 ```
 $ git clone https://github.com/somleng/somleng-project --depth 1 && cd somleng-project
 ```
+
+Or download `docker-compose.yml` manually [here](https://raw.githubusercontent.com/somleng/somleng-project/master/docker-compose.yml)
 
 ## Pull the latest images
 
@@ -41,7 +41,7 @@ In another terminal...
 ### Get the Account SID and Auth Token
 
 ```
-$ IFS=: read ACCOUNT_SID AUTH_TOKEN <<< $(docker-compose run --rm -e FORMAT=basic_auth twilreapi /bin/bash -c './bin/rails db:seed') && echo "Account SID: $ACCOUNT_SID" && echo "Auth Token: $AUTH_TOKEN"
+$ IFS=: read ACCOUNT_SID AUTH_TOKEN <<< $(docker-compose run --rm -e FORMAT=basic_auth twilreapi /bin/bash -c './bin/rails db:seed') && echo "Account SID: $ACCOUNT_SID" && echo "Auth Token:  $AUTH_TOKEN"
 ```
 
 ### Initiate a call with CURL
