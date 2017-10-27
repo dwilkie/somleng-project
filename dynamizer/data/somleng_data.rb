@@ -1,11 +1,7 @@
 require "somleng/rtd_client"
 require "somleng/rtd_client/request/project"
 
-class SomlengProject::DocumentData
-  delegate :ews_project_id,
-           :avf_project_id,
-           :to => :class
-
+class SomlengData < Dynamizer::Data
   def ews_data
     @ews_data ||= ews_project_request.fetch_real_time_data!
   end
@@ -25,11 +21,11 @@ class SomlengProject::DocumentData
   private
 
   def ews_project_request
-    @ews_project_request ||= build_project_request(ews_project_id)
+    @ews_project_request ||= build_project_request(self.class.ews_project_id)
   end
 
   def avf_project_request
-   @avf_project_request ||= build_project_request(avf_project_id)
+   @avf_project_request ||= build_project_request(self.class.avf_project_id)
   end
 
   def build_project_request(project_id)

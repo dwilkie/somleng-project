@@ -4,11 +4,11 @@
 
 ## What is The Somleng Project?
 
-The Somleng Project is a collection of open source telephony tools which can be used to build powerful Voice and SMS applications. The goal of the project is to break down the economic and accessibility barriers to building telephony applications. Read more about Somleng [here](https://github.com/somleng/somleng-project/blob/master/docs/what_is_somleng.md)
+The Somleng Project is a collection of open source telephony tools which can be used to build powerful Voice applications. The goal of the project is to break down the economic and accessibility barriers to building telephony applications. Read more about Somleng [here](https://github.com/somleng/somleng-project/blob/master/docs/what_is_somleng.md)
 
 ## Who's using it?
 
-Check out [Somleng's Real Time Data](http://rtd.somleng.org) to see who's currently using Somleng. You can also read about our case studies in [Cambodia](https://github.com/somleng/somleng-project/blob/master/docs/case_study_ews.md) and [Somalia](https://github.com/somleng/somleng-project/blob/master/docs/case_study_africas_voices.md).
+Check out [Somleng's Real Time Data](http://rtd.somleng.org) to see who's currently using Somleng. You can also read about our case studies in the [Introduction to Somleng article](https://github.com/somleng/somleng-project/blob/master/docs/introduction_for_development_organizations.md).
 
 ## How can I use it?
 

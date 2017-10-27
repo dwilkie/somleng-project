@@ -2,7 +2,7 @@
 
 By David Wilkie, CEO and Founder, Somleng
 
-Last updated: 26 October 2017
+Last updated: 27 October 2017
 
 Previous diffs and versions are available [here](https://github.com/somleng/somleng-project/commits/master/docs/introduction_for_development_organizations.md). Contributions and improvements [welcome](https://github.com/somleng/somleng-project/pulls).
 
@@ -95,6 +95,12 @@ The second problem was that AVF wanted to have more control over when the calls 
 ### More Info
 
 Our [technical write up](https://github.com/somleng/somleng-project/blob/master/docs/case_study_africas_voices.md) contains more information about the project from a technical perspective.
+
+## Contact
+
+For more information about Somleng please contact David Wilkie at [dave@somleng.org](mailto:dave@somleng.org)
+
+## References
 
 <a name="footnote-ews-article"><sup>1</sup></a> [New innovations protecting lives in flood-prone Cambodia](http://unicefstories.org/2017/06/20/new-innovations-protecting-lives-in-flood-prone-cambodia/)
 

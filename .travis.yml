@@ -1,3 +1,6 @@
-language: ruby
+language: generic
+sudo: required
+dist: trusty
 after_success:
-  - bundle exec rake docs:update
+  - bash -c '[[ "$TRAVIS_PULL_REQUEST" = "false" && "$TRAVIS_BRANCH" = "master" ]] && git clone "https://github.com/$TRAVIS_REPO_SLUG.git" --depth 1 out && cd out && git config user.email "deploy@travis-ci.org" && git config user.name "Deployment Bot (from Travis CI)" && sudo docker run --rm -e EWS_PROJECT_ID=6bb193d9-876e-4846-a42f-8a35db66b477 -e AVF_PROJECT_ID=11d41773-cb37-4614-883d-602bb4e1824e -v $(pwd)/dynamizer/templates:/tmp/dynamizer_templates:ro -v $(pwd)/dynamizer/renderers:/tmp/dynamizer_renderers:ro -v $(pwd)/dynamizer/data:/tmp/dynamizer_data:ro -v  $(pwd)/dynamizer/bundler:/tmp/dynamizer_bundler -v $(pwd):/tmp/dynamizer_output dwilkie/dynamize /bin/sh -c "BUNDLE_GEMFILE=/tmp/dynamizer_bundler/Gemfile bundle install --deployment --without development test && BUNDLE_GEMFILE=/tmp/dynamizer_bundler/Gemfile bundle exec rake dynamizer:dynamize" && git add -A && git commit -m "Update dynamic content [ci skip]" && openssl aes-256-cbc -K $encrypted_7555f0a8ccb2_key -iv $encrypted_7555f0a8ccb2_iv -in ./dynamizer/dynamizer-travis.enc -out dynamizer-travis -d && chmod 400 dynamizer-travis && eval `ssh-agent -s` && ssh-add dynamizer-travis && git push "git@github.com:$TRAVIS_REPO_SLUG.git" $TRAVIS_BRANCH'
+
